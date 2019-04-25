@@ -3,18 +3,22 @@ import java.math.BigInteger;
 
 public class Fibonacci {
 
+	private static FibData fibData = new FibData();
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		BigInteger arr[] = new BigInteger[200];
-		
-		arr[0] = new BigInteger("1");
-		arr[1] = new BigInteger("1");
-		
-		for (int i = 2; i < arr.length; i++) {
-			arr[i] = arr[i-2].add(arr[i-1]);
-			System.out.println((i+1) + " : " + arr[i]);
+		for (int i = 1; i <= 200; i++) {
+			System.out.println(i + " : " + Fibonacci.of(i));
 		}
+		
+	}
+	
+	
+	
+	public static BigInteger of(int index){		
+		return fibData.disp(index-1);
 	}
 
 }
